@@ -1,20 +1,36 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# MediaFlow Archiver — Frontend
 
-# Run and deploy your AI Studio app
+React 19 + Vite + Tailwind CSS 4 frontend for MediaFlow Archiver, wrapped in a Tauri 2.0 desktop shell.
 
-This contains everything you need to run your app locally.
+## Development
 
-View your app in AI Studio: https://ai.studio/apps/f13d5c6a-f72a-4ce4-a258-2f7fb1b2d1fb
+```bash
+npm install
+npm run dev         # Vite dev server on http://localhost:3000
+```
 
-## Run Locally
+## Tauri Desktop
 
-**Prerequisites:**  Node.js
+```bash
+npx tauri dev       # Launch desktop app with hot reload
+npx tauri build     # Production build (RPM, DEB, AppImage)
+```
 
+## Environment
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Copy `.env.example` to `.env.local` and configure:
+
+```env
+GEMINI_API_KEY="your_key_here"
+```
+
+Or configure the API key through the **Settings** page in the app UI.
+
+## Stack
+
+- **React 19** — UI framework
+- **Vite 6** — Build tool & dev server
+- **Tailwind CSS 4** — Utility-first styling (Material You design tokens)
+- **Framer Motion** — Animations & transitions
+- **Lucide React** — Icon library
+- **Tauri 2** — Desktop shell (Rust)

@@ -1,0 +1,84 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+@theme {
+  --font-headline: "Inter", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-label: "Space Grotesk", sans-serif;
+
+  --color-surface-dim: #131313;
+  --color-tertiary-fixed-dim: #ffb3b5;
+  --color-error: #ffb4ab;
+  --color-secondary-container: #feb700;
+  --color-surface-tint: #53dbc6;
+  --color-primary: #53dbc6;
+  --color-on-error: #690005;
+  --color-surface-container-low: #1c1b1b;
+  --color-on-surface: #e5e2e1;
+  --color-on-error-container: #ffdad6;
+  --color-on-secondary-container: #6b4b00;
+  --color-inverse-surface: #e5e2e1;
+  --color-background: #131313;
+  --color-inverse-on-surface: #313030;
+  --color-on-primary-container: #003b33;
+  --color-on-tertiary-fixed-variant: #920027;
+  --color-tertiary-container: #ff6a78;
+  --color-tertiary: #ffb3b5;
+  --color-surface-bright: #393939;
+  --color-surface: #131313;
+  --color-surface-container-high: #2a2a2a;
+  --color-on-tertiary-container: #6d001b;
+  --color-on-background: #e5e2e1;
+  --color-surface-container-lowest: #0e0e0e;
+  --color-on-primary-fixed: #00201b;
+  --color-primary-container: #00af9b;
+  --color-primary-fixed-dim: #53dbc6;
+  --color-secondary: #ffdb9d;
+  --color-surface-container: #20201f;
+  --color-on-secondary-fixed-variant: #5e4200;
+  --color-on-tertiary-fixed: #40000c;
+  --color-on-tertiary: #680019;
+  --color-primary-fixed: #74f8e1;
+  --color-on-primary-fixed-variant: #005046;
+  --color-surface-container-highest: #353535;
+  --color-inverse-primary: #006b5e;
+  --color-on-secondary: #412d00;
+  --color-on-primary: #003730;
+  --color-surface-variant: #353535;
+  --color-error-container: #93000a;
+  --color-outline: #869490;
+  --color-secondary-fixed: #ffdea8;
+  --color-secondary-fixed-dim: #ffba20;
+  --color-on-surface-variant: #bbcac5;
+  --color-tertiary-fixed: #ffdada;
+  --color-outline-variant: #3c4946;
+  --color-on-secondary-fixed: #271900;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-on-surface font-body antialiased;
+  }
+}
+
+/* Custom scrollbar for subtle appearance in dark theme */
+.custom-scrollbar::-webkit-scrollbar {
+    height: 4px;
+    width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: var(--color-outline-variant);
+    border-radius: 4px;
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.fill-icon {
+    font-variation-settings: 'FILL' 1;
+}

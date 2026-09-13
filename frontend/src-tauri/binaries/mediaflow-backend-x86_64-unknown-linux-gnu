@@ -1,0 +1,28 @@
+#!/bin/bash
+# MediaFlow Archiver — Spring Boot Sidecar Launcher
+# This script is invoked by Tauri to start the backend JAR as a managed child process.
+# Tauri automatically kills this process when the desktop app closes.
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+JAR_FILE="$SCRIPT_DIR/MediaflowArchiver.jar"
+
+# Verify the JAR exists
+if [ ! -f "$JAR_FILE" ]; then
+  echo "[Sidecar ERROR] Backend JAR not found at: $JAR_FILE" >&2
+  exit 1
+fi
+
+# Verify Java is available
+if ! command -v java &> /dev/null; then
+  echo "[Sidecar ERROR] Java 21 is required but not found on PATH." >&2
+  echo "[Sidecar ERROR] Please install Java 21: https://adoptium.net/" >&2
+  exit 1
+fi
+
+# Launch Spring Boot with the desktop profile
+exec java \
+  -jar "$JAR_FILE" \
+  --spring.profiles.active=desktop \
+  --server.address=127.0.0.1 \
+  --server.port=8080 \
+  "$@"

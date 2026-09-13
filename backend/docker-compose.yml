@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: pgvector/pgvector:pg16  # Using pg16 tag, or pg17 if available.
+    container_name: mediaflow-postgres
+    environment:
+      POSTGRES_USER: mediaflow
+      POSTGRES_PASSWORD: mediaflow_password
+      POSTGRES_DB: mediaflow_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  pgdata:

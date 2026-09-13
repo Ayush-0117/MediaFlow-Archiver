@@ -1,0 +1,31 @@
+# ========================
+# MediaFlow Archiver
+# ========================
+
+# --- Rust / Tauri build artifacts ---
+frontend/src-tauri/target/
+frontend/src-tauri/resources/*.jar
+frontend/src-tauri/binaries/*.jar
+
+# --- Java build artifacts ---
+backend/target/
+
+# --- Node.js ---
+frontend/node_modules/
+frontend/dist/
+
+# --- IDE ---
+.idea/
+.vscode/
+*.iml
+*.swp
+*.swo
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- Environment / Secrets ---
+.env
+.env.local
+.env.production

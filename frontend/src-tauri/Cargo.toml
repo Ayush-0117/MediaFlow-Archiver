@@ -1,0 +1,25 @@
+[package]
+name = "mediaflow-archiver"
+version = "1.0.0"
+description = "Unified Digital Asset Manager and AI-Driven Media Sorter"
+authors = ["Ayush"]
+edition = "2021"
+
+[lib]
+name = "mediaflow_archiver_lib"
+crate-type = ["lib", "cdylib", "staticlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon"] }
+tauri-plugin-shell = "2"
+tauri-plugin-dialog = "2"
+tauri-plugin-notification = "2"
+tauri-plugin-opener = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+reqwest = { version = "0.13.4", features = ["json"] }
+tauri-plugin-single-instance = "2.4.2"
+tokio = { version = "1.52.3", features = ["time"] }

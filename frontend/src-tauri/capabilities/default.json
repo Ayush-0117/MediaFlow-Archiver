@@ -1,0 +1,16 @@
+{
+  "identifier": "default",
+  "description": "Default capability set for MediaFlow Archiver",
+  "windows": ["main"],
+  "permissions": [
+    "core:default",
+    "dialog:allow-open",
+    "dialog:allow-message",
+    "dialog:allow-ask",
+    "notification:default",
+    "notification:allow-is-permission-granted",
+    "notification:allow-request-permission",
+    "notification:allow-notify",
+    "opener:default"
+  ]
+}
